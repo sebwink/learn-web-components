@@ -1,0 +1,27 @@
+{
+  "name": "learn-web-components-native",
+  "version": "0.0.42",
+  "description": "Examples/Experiments for native HTML 5 web components",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync --server --files '**/*' --ignore 'node_modules'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebwink/learn-web-components.git"
+  },
+  "keywords": [
+    "WebComponents",
+    "HTML5",
+    "Components"
+  ],
+  "author": "Sebastian Winkler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebwink/learn-web-components/issues"
+  },
+  "homepage": "https://github.com/sebwink/learn-web-components#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10"
+  }
+}

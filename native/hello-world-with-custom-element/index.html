@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hello-world><span slot="importance-slot">!!!!!</span></hello-world>
+    <hello-world><span slot="importance-slot">!!!!!!!!!</span></hello-world>
+    <hello-world importance=100></hello-world>
+    <hello-world><span slot="importance-slot">?????!!!!!!!!</span></hello-world>
+
+    <template id="hello-world-template">
+        <h1>Hello, World<slot name="importance-slot">!</slot></h1>
+    </template>
+  
+    <script src="main.js"></script>
+</body>
+</html>

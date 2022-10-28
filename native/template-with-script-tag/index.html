@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template with script tag</title>
+</head>
+<body>
+    <button onclick="sayHi()">Say Hi!</button>
+    <button onclick="sayHello()">Say Hello!</button>
+    <button onclick="appendOneMoreTemplate()">Add another template!</button>
+
+    <p id="hi"></p>
+    <p id="hello"></p>
+
+    <template id="the-template">
+        <h1>The template</h1>
+
+        <script>
+            function sayHi() {
+                const p = document.getElementById('hi');
+                p.innerText = `Hi${'!'.repeat(numTemplates)}`; 
+            }
+        </script>
+    </template>
+
+    <template id="the-other-template">
+        <h1>The other template</h1>
+
+        <script>
+            var sayHello = (() => {
+                const templateCount = numTemplates;
+                return () => {
+                const p = document.getElementById('hello');
+                p.innerText = `Hello${'!'.repeat(templateCount)}`; 
+            }})()
+        </script>
+    </template>
+
+    <script>
+        let numTemplates = 0;
+
+        function appendTemplate(element, templateId) {
+            const template = document.getElementById(templateId);
+            const node = document.importNode(template.content, true);
+            element.appendChild(node);
+        }
+
+        function appendOneMoreTemplate() {
+            numTemplates++;
+            if (numTemplates % 3 === 0) {
+                appendTemplate(document.body, 'the-other-template');
+            } else {
+                appendTemplate(document.body, 'the-template');
+            }
+        }
+
+        appendTemplate(document.body, 'the-template');
+        appendTemplate(document.body, 'the-other-template');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+[submodule "native/mdn/web-components-examples"]
+	path = native/mdn/web-components-examples
+	url = https://github.com/mdn/web-components-examples
